@@ -9,28 +9,49 @@
         <form action="#">
             <fieldset>
                 <legend>Basic Information</legend>
-                <label for="name">Enter your name:</label>
-                <input type="text" name="name">
+                <label>First Name:</label>
+                <input type="text" name="fName">
                 <br>
+                <label>Last Name:</label>
+                <input type="text" name="lName">
+                <br>
+
                 <label >Gender</label> 
                 <input type="radio" name="Male">
-                <label for="gender">Male</label>               
+                <label >Male</label>               
                 <input type="radio" name="Female">
-                <label for="gender">Female</label>
+                <label >Female</label>
                 <br>
+                <label>Date of Birth</label>
+                <input type="date" name="dob">
+                <br>
+                <label>Religion</label>
+                <select name="Religion">
+                    <option>Islam</option>
+                    <option>Hindu</option>
+                    <option>Christan</option>
+                    <option>Buddha</option>
+                </select>
             </fieldset>
             <fieldset>
                 <legend>Contact Information:</legend>
-                <label for="email">Email:</label>
+                <label >Present Address</label>
+                <input type="textarea" name="preAddress">
+                <br>
+                <label">Permanent Address</label>
+                <input type="textarea" name="perAddress" >
+                <br>
+                <label">Phone:</label>
+                <input type="tel" name="phoneNo" >
+                <br>
+                <label >Email:</label>
                 <input type="email" name="email">
                 <br>
-                <label for="phoneNo">Phone:</label>
-                <input type="number" name="phoneNo" >
+                <label >Personal Website Link:</label>
+                <input type="website" name="website">
                 <br>
             </fieldset>
+                <input type="submit" name="submit">
         </form>
-        <fieldset>
-                <legend>Academic Information:</legend>
-            </fieldset>
     </body>
 </html>
