@@ -34,9 +34,3 @@
             </fieldset>
     </body>
 </html>
-
-<style type="text/css">
-    table,tr,td{
-        border: 1px solid black;
-    }
-</style>
