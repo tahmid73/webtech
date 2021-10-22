@@ -3,7 +3,16 @@
     <title>INTERNET SERVICE PROVIDER</title>
 </head>
 <?php
-    $username=$password=$usernameErr=$passErr="";
+    $handle1=fopen("data.json","r");
+    $data= fread($handle1,filesize("data.json"));
+    $explode=explode("\n",$data);
+    $arr1=array();
+    for ($i = 0; $i < count($explode)-1; $i++)
+    {
+        $json=json_decode(($explode[$i]));
+        array_push($arr1, $json);
+    }
+    $username=$password=$usernameErr=$passErr=$flag="";
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         if(empty($_POST["username"]))
             $usernameErr="Enter your name";
@@ -13,14 +22,16 @@
             $passErr="Enter your password";
         else
             $password=$_POST["password"];
-        if($username==="tahmid" && $password==="123")
-        header("Location: home.php");
-        else if($username!="tahmid")
-            $usernameErr="Wrong username";
-        else if($password!="123")
-            $passErr="wrong password";
-        else
-            Echo "wrong information";
+        for($i=0;$i<count($arr1);$i++){
+                $a=$arr1[$i]->username;
+                $b=$arr1[$i]->password;
+                if($a==$username && $b==$password){
+                    header("LOCATION:home.php");
+                    $flag=1;
+                }
+            }
+        if($flag!=1)
+            $passErr=$usernameErr="Incorrect information";
     }
     function input($data){
         $data=trim($data);
@@ -48,7 +59,13 @@
             </span>
             </fieldset>
             <br>
-            <input type="submit"><br>
+            <input type="submit">
+            <br><br>
+            <a>Forgot Password?</a>
+            <a href="resetPassword.php">Reset</a>
+            <br><br>
+            <a>Don't have an account yet?</a>
+            <a href="registration.php">Sign Up</a>
         </fieldset>
     </form>
 </body>
