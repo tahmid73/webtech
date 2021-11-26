@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+.zero{
+    display: flex;
+    font-family: 'JetBrains Mono', monospace;
+    align-items: center;
+}
+.first{
+    font-size: 150px;
+    color: #828282;
+}
+.second{
+    display: flex;
+    flex-direction: column;
+    color: #828282;
+    font-size: larger;
+}
+.third{
+    color:#40343D;
+    font-size: xx-large;
+}
+
+.money{
+    color: #EE1B24;
+}
+
+.images{
+    width:200px;
+}
