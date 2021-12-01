@@ -4,7 +4,7 @@ $dbUser="root";
 $dbPassword="";
 $dbname="chat";
 $connection = new mysqli($servername, $dbUser, $dbPassword, $dbname);
-
+$time=time();
 session_start();
 $sender=$_SESSION['username'];
 
@@ -19,7 +19,7 @@ if($request_method==="POST"){
         $message=$_POST['message'];
         $sql = "INSERT INTO msg (sender, receiver,message,time) VALUES (?, ?, ?, ?)";
 			$stmt = $connection->prepare($sql);
-			$stmt->bind_param('ssss',$sender,$receiver,$message,time());
+			$stmt->bind_param('ssss',$sender,$receiver,$message,date("F j, Y, g:i a",$time));
 			$response=$stmt->execute();
 			if ($response) {
 				echo "Data Inserted Succssfully";
