@@ -11,10 +11,11 @@ $phone="Phone";
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <script src="../app.js"></script>
     <link rel="stylesheet" href="../content/login.css">
 </head>
 <body>
-        <form action="../controller/registrationB.php" method="post">
+        <form name="regForm" action="../controller/registrationB.php" method="post" onsubmit="return isValidReg(this);">
     <div class="middle">
         <?php
     include '../components/middle.php';
@@ -25,22 +26,28 @@ $phone="Phone";
             <h2 class="heading">Sign up!</h2>
         </span>
         <span class="fields">
-        <input class="username" placeholder="<?php echo $username ?>" type="text" name="username">
+        <input class="username" value="<?php echo $username ?>" placeholder="<?php echo $username ?>" type="text" name="username">
+        <a id="usernameErr"></a>
         </span>
         <span class="fields">
-        <input class="username" placeholder="<?php echo $firstname ?>" type="text" name="firstname">
+        <input class="username" value="<?php echo $firstname ?>" placeholder="<?php echo $firstname ?>" type="text" name="firstname">
+        <a id="firstnameErr"></a>
         </span>
         <span class="fields">
-        <input class="username" placeholder="<?php echo $lastname ?>" type="text" name="lastname">
+        <input class="username" value="<?php echo $lastname ?>" placeholder="<?php echo $lastname ?>" type="text" name="lastname">
+        <a id="lastnameErr"></a>        
         </span>
         <span class="fields">
-        <input class="username" placeholder="<?php echo $address ?>" type="textarea" name="address">
+        <input class="username" value="<?php echo $address ?>" placeholder="<?php echo $address ?>" type="textarea" name="address">
+        <a id="AddressErr"></a>
         </span>
         <span class="fields">
-        <input class="username" placeholder="<?php echo $phone ?>" type="tel" name="phone">    
+        <input class="username" value="<?php echo $phone ?>" placeholder="<?php echo $phone ?>" type="tel" name="phone">    
+        <a id="phoneErr"></a>
         </span>
         <span class="fields">
-        <input class="username" placeholder="<?php echo $password ?>" type="password" name="password">
+        <input class="username" value="<?php echo $password ?>" placeholder="<?php echo $password ?>" type="password" name="password">
+        <a id="passwordErr"></a>
         </span>
         <input class="loginBtn" type="submit" name="submit" value="Sign up!">
     </div>

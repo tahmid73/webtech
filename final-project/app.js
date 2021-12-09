@@ -1,19 +1,31 @@
 function isValidReg(regForm) 
 {
 	const username = regForm.username.value;
+	const firstname=regForm.firstname.value;
+	const lastname=regForm.lastname.value;
+	const address=regForm.address.value;
+	const phone=regForm.phone.value;
 	const password = regForm.password.value;
-	const email = regForm.email.value;
 	const flag= false;
 
-	if(username==="" || password==="" || email===""){
-		if (username==="") {
+	if(username==="" ||username==="User Name" || password==="" ||firstname==="" || lastname==="" || address==="" ||phone==="" || firstname==="First Name" || lastname==="Last Name" || address==="Address" ||phone==="phone" || password==="Password"){
+		if (username==="" ||username==="User Name") {
 			document.getElementById("usernameErr").innerHTML = "Please Enter you username";
 		}
 		if(password==="" ){
 			document.getElementById("passwordErr").innerHTML="Please Enter your password";
 		}
-		if(email===""){
-			document.getElementById("emailErr").innerHTML="Please Enter your email";
+		if(address===""){
+			document.getElementById("addressErr").innerHTML="Please Enter your address";
+		}
+		if(firstname=""){
+			document.getElementById("firstnameErr").innerHTML="Please Enter your First Name";
+		}
+		if(lastname="" || lastname==="Last Name"){
+			document.getElementById("lastnameErr").innerHTML="Please Enter your Last name";
+		}
+		if(phone=""){
+			document.getElementById("phoneErr").innerHTML="Please Enter your Phone Number";
 		}
 		return false;
 	}
