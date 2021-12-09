@@ -1,13 +1,6 @@
 <?php
 //dbms
-$servername="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbname="isp";
-$connection = new mysqli($servername, $dbUser, $dbPassword, $dbname);
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+include '../model/getUser.php';
 
 $request_method=$_SERVER['REQUEST_METHOD'];
 if($request_method==="POST"){
@@ -22,7 +15,7 @@ if($request_method==="POST"){
         $usernameErr="Enter your username";
     }
     else if(empty($cost)){
-        $lastnameErr= "Enter Last name<br>";
+        $lastnameErr= "Enter Last name";
     }
 
     else{

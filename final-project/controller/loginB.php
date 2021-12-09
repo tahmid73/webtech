@@ -1,15 +1,7 @@
 <?php
     $flag="";
     //file read
-    $servername="localhost";
-    $user="root";
-    $password="";
-    $dbname="isp";
-    $connection = new mysqli($servername, $user, $password, $dbname);
-    //$pass=$username=$flag="";
-	if ($connection->connect_error) {
-		die("Connection failed: " . $connection->connect_error);
-	}
+    include '../model/getUser.php';
 
     if($_SERVER['REQUEST_METHOD'] === "POST" and count($_REQUEST)>0){
         if(empty($username)){

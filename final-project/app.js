@@ -7,24 +7,24 @@ function isValidReg(regForm)
 	const phone=regForm.phone.value;
 	const password = regForm.password.value;
 	const flag= false;
-
-	if(username==="" ||username==="User Name" || password==="" ||firstname==="" || lastname==="" || address==="" ||phone==="" || firstname==="First Name" || lastname==="Last Name" || address==="Address" ||phone==="phone" || password==="Password"){
+	if(username==="" ||username==="User Name" || password==="" ||firstname==="" || lastname==="" || address==="" ||phone==="" || 
+	firstname==="First Name" || lastname==="Last Name" || address==="Address" ||phone==="phone" || password==="Password"){
 		if (username==="" ||username==="User Name") {
 			document.getElementById("usernameErr").innerHTML = "Please Enter you username";
 		}
-		if(password==="" ){
+		if(password==="" ||password==="Password"){
 			document.getElementById("passwordErr").innerHTML="Please Enter your password";
 		}
-		if(address===""){
+		if(address==="" || address==="Address"){
 			document.getElementById("addressErr").innerHTML="Please Enter your address";
 		}
-		if(firstname=""){
+		if(firstname==="" ||firstname==="First Name"){
 			document.getElementById("firstnameErr").innerHTML="Please Enter your First Name";
 		}
-		if(lastname="" || lastname==="Last Name"){
+		if(lastname==="" || lastname==="Last Name"){
 			document.getElementById("lastnameErr").innerHTML="Please Enter your Last name";
 		}
-		if(phone=""){
+		if(phone==="" || phone==="Phone"){
 			document.getElementById("phoneErr").innerHTML="Please Enter your Phone Number";
 		}
 		return false;
@@ -37,11 +37,11 @@ function isValidLog(logForm)
 	const username = logForm.username.value;
 	const password = logForm.password.value;
 
-	if(username==="" && password===""){
-		if (username==="") {
+	if(username==="" || password===""||username==="User Name"||password==="Password"){
+		if (username===""||username==="Username") {
 			document.getElementById("usernameErr").innerHTML = "Please Enter you username";
 		}
-		if(password==="" ){
+		if(password===""||password==="Password" ){
 			document.getElementById("passwordErr").innerHTML="Please Enter your password";
 		}
 		return false;
@@ -49,36 +49,11 @@ function isValidLog(logForm)
 	return true;
 }
 
-var myVar=setInterval(showMsg,1000);
-function showMsg() {
-  var username="<?php echo $username; ?>"
-				$.get("getMsg.php",function(data, status) {
+function showUsers() {
+				$.get("getUser.php",function(data, status) {
 					const users = JSON.parse(data);
-					let tableData = "<tbody>";
-					for (let i = 0; i < users.length; i++) {
-            if(users[i].sender===username||users[i].receiver===username){
-						tableData += "<tr>" + 
-						"<td>" + users[i].sender + "</td>" + 
-						"<td>" + users[i].receiver + "</td>" +
-						"<td>" + users[i].message + "</td>" + 
-						"<td>" + users[i].time + "</td>" + 
-						"</tr>";
-          }
-					}
-					tableData += "</tbody>";
-					let table = "<table border='1'>" +
-						"<thead>" +
-						"<tr>" +
-						"<td>" + "Sender" + "</td>" + 
-						"<td>" + "Receiver" + "</td>" + 
-						"<td>" + "Message" + "</td>" + 
-						"<td>" + "Time" + "</td>" + 
-						"</tr>" + 
-						"</thead>" +  
-						tableData + 
-					"</table>";
-          "print"
-					$("#i3").html(table);
+					console.log(users[1].username);
+					return users;
 				});
 			}
 function getMsg(){

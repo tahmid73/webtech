@@ -1,15 +1,5 @@
 <?php
-//dbms
-$servername="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbname="isp";
-$connection = new mysqli($servername, $dbUser, $dbPassword, $dbname);
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
-
+include '../model/getUser.php';
 
 $request_method=$_SERVER['REQUEST_METHOD'];
 if($request_method==="POST"){
@@ -23,10 +13,10 @@ if($request_method==="POST"){
     if(empty($firstname)||$firstname==="First Name"){
         echo "Enter your First name";
     }
-    else if(empty($username)||$username="User Name"){
+    else if(empty($username)||$username==="User Name"){
         echo "Enter your username";
     }
-    else if(empty($lastname)||$lastname="Last Name"){
+    else if(empty($lastname)||$lastname==="Last Name"){
         echo "Enter Last name<br>";
     }
     else if(empty($address||$address==="Address")){
@@ -35,7 +25,7 @@ if($request_method==="POST"){
     else if(empty($password)||$password==="Password"){
         echo "Enter Your password <br>";
     }
-    else if(empty($phone)){
+    else if(empty($phone) ||$phone==="Phone"){
         echo "Enter your phone no<br>";
     }
     else{
