@@ -20,19 +20,19 @@ if($request_method==="POST"){
     $password=$_POST['password'];
     $phone=$_POST['phone'];
     $type="customer";
-    if(empty($firstname)){
+    if(empty($firstname)||$firstname==="First Name"){
         echo "Enter your First name";
     }
-    else if(empty($username)){
+    else if(empty($username)||$username="User Name"){
         echo "Enter your username";
     }
-    else if(empty($lastname)){
+    else if(empty($lastname)||$lastname="Last Name"){
         echo "Enter Last name<br>";
     }
-    else if(empty($address)){
+    else if(empty($address||$address==="Address")){
         echo "Enter your address<br>";
     }
-    else if(empty($password)){
+    else if(empty($password)||$password==="Password"){
         echo "Enter Your password <br>";
     }
     else if(empty($phone)){

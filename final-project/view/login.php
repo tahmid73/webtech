@@ -14,7 +14,7 @@ $usernameErr=$passErr=$flag="";
 			color: red;
 		}
 	</style>
-	<script src="jsValidation.js"></script>
+	<script src="../app.js"></script>
 </head>
 <body>
     <div class="middle">
