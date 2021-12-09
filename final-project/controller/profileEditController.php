@@ -36,9 +36,9 @@ if($request_method==="POST"){
         echo "Enter your phone no<br>";
     }
     else{
-        $sql = "UPDATE users (firstname,lastname,address,password,phone) VALUES (?, ?, ?, ?, ?) WHERE ID=.".$id."";
+        $sql = 'UPDATE users SET firstname =?, lastname =?, address=?,password =?,phone=? WHERE id =?';
 			$stmt = $connection->prepare($sql);
-			$stmt->bind_param('sssss',$firstname,$lastname,$address,$password,$phone);
+			$stmt->bind_param('ssssss',$firstname,$lastname,$address,$password,$phone,$id);
 			$response=$stmt->execute();
 			if ($response) {
 				echo "Data Inserted Succssfully";
@@ -46,7 +46,7 @@ if($request_method==="POST"){
 			else {
 				echo "Error while saving";
 			}
-        header('Location:../view/login.php');
+        header('Location:../view/profile.php');
     }
 
 }
