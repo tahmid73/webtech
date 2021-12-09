@@ -39,7 +39,7 @@ $phone="Phone";
         </span>
         <span class="fields">
         <input class="username" value="<?php echo $address ?>" placeholder="<?php echo $address ?>" type="textarea" name="address">
-        <a id="AddressErr"></a>
+        <a id="addressErr"></a>
         </span>
         <span class="fields">
         <input class="username" value="<?php echo $phone ?>" placeholder="<?php echo $phone ?>" type="tel" name="phone">    

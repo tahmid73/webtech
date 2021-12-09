@@ -1,14 +1,6 @@
 <?php
 //dbms
-$servername="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbname="isp";
-$connection = new mysqli($servername, $dbUser, $dbPassword, $dbname);
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+include '../model/getUser.php';
 
 
 $request_method=$_SERVER['REQUEST_METHOD'];
