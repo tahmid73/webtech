@@ -1,6 +1,10 @@
 <?php 
-include '../components/loggedHeader.php';
-session_start(); 
+include '../view/components/loggedHeader.php';
+include '../model/database.php';
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}  
 echo "welcome to home ";
 echo $_SESSION['username'];
     
@@ -32,5 +36,5 @@ echo $_SESSION['username'];
     
 
 if($_SESSION['type']=="admin")
-    include "../components/footer.php"
+    include "../view/components/footer.php"
 ?>

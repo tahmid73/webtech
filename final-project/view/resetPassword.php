@@ -1,5 +1,5 @@
 <?php 
-include '../components/header.php';
+include './components/loggedHeader.php';
 
 $username=$phone=$usernameErr=$phoneErr="";
 ?>

@@ -1,5 +1,5 @@
 <?php
-include '../components/header.php';
+include './components/loggedHeader.php';
 $username="Username";
 $password="Password";
 $usernameErr=$passErr=$flag="";
@@ -8,19 +8,19 @@ $usernameErr=$passErr=$flag="";
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="../content/login.css">
+    <link rel="stylesheet" href="./css/login.css">
     <style>
 		#usernameErr,#passwordErr {
 			color: red;
 		}
 	</style>
-	<script src="../app.js"></script>
+	<script src="./js/app.js"></script>
 </head>
 <body>
     <div class="middle">
     <form action="../controller/loginB.php" method="post" onsubmit="return isValidLog(this);">
     <?php
-    include '../components/middle.php';
+    include './components/middle.php';
     ?>
     </div>
     <div id="loginForm" class="loginForm">

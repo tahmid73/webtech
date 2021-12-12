@@ -1,32 +1,24 @@
 <?php
-include '../components/header.php';
+include './components/loggedHeader.php';
 $username="Username";
 $password="Password";
 $lineType="Line Type";
 $speed="Speed";
 $cost="Cost";
 $usernameErr=$passErr=$flag="";
-$servername="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbname="isp";
-$connection = new mysqli($servername, $dbUser, $dbPassword, $dbname);
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+include '../model/database.php';
 ?>
 
 <head>
     <meta charset="UTF-8">
     <title>Order</title>
-    <link rel="stylesheet" href="../content/login.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
     <div class="middle">
     <form action="../controller/loginB.php" method="post">
     <?php
-    include '../components/middle.php';
+    include './components/middle.php';
     ?>
     </div>
     <div id="loginForm" class="loginForm">
@@ -44,10 +36,10 @@ if ($connection->connect_error) {
 	                	if ($data->num_rows > 0) {
 	                		while ($row = $data->fetch_assoc()) {
                                 $a=$row['speed'];
-                                echo "
-                                <option value=".$a.">$a</option>
-                                    ";
-                            }
+                                echo $a;
+                                ?>
+                                <option value="<?php echo $a ?>"><?php echo $a ?></option>
+                           <?php }
                         }
                     }
                 ?>
@@ -57,9 +49,9 @@ if ($connection->connect_error) {
                 <option value="cat5">Cat5</option>
                 <option value="cat6">cat6</option>
             </select>
-            <select name="" id="">
+            <select class="username" name="" id="">
             <?php 
-                    $sql1 = "SELECT * FROM package where speed=".$a."";
+                    $sql1 = "SELECT * FROM package where speed='$a'";
 	                $stmt1 = $connection->prepare($sql1);
 	                $response1 = $stmt1->execute();
 	                if ($response1) {
@@ -67,7 +59,7 @@ if ($connection->connect_error) {
                         $flag=false;
 	                	if ($data1->num_rows > 0) {
 	                		while ($row = $data1->fetch_assoc()) {
-                                $a=$row['speed'];
+                                $a=$row['cost'];
                                 echo "
                                 <option value=".$a.">$a</option>
                                     ";

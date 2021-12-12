@@ -22,7 +22,10 @@
 			while ($row = $data->fetch_assoc()) {
 				if($row['username']==$_POST['username'] and $_POST['password']==$row['password']){
                     $flag=true;
-                    session_start();
+                    if(!isset($_SESSION)) 
+					{ 
+    					session_start(); 
+					} 
                     $_SESSION['username']=$row['username'];
                     $_SESSION['type']=$row['type'];
                     $_SESSION['id']=$row['id'];

@@ -1,15 +1,15 @@
 <?php
 $username="";
 //var_dump("status",session_status(),"active",PHP_SESSION_ACTIVE);
-if (session_status()===PHP_SESSION_ACTIVE) {
-session_start();
-$username=$_SESSION['username'];
-//var_dump($username);
-if($username!="")
-    include '../components/loggedHeader.php';
-}
-else
-    include '../components/header.php';
+// if (session_status()===PHP_SESSION_ACTIVE) {
+// session_start();
+// $username=$_SESSION['username'];
+// //var_dump($username);
+// if($username!="")
+    include './components/loggedHeader.php';
+// }
+// else
+//     include './components/header.php';
 ?>
 
 <html>

@@ -1,19 +1,15 @@
 <?php 
-include '../components/loggedHeader.php';
+include '../view/components/loggedHeader.php';
 echo "<br>";
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 $username=$_SESSION['username'];
 
 //file read
-$flag="";
-    $servername="localhost";
-    $user="root";
-    $password="";
-    $dbname="isp";
-    $connection = new mysqli($servername, $user, $password, $dbname);
-	if ($connection->connect_error) {
-		die("Connection failed: " . $connection->connect_error);
-	}
+        $flag="";
+        include '../model/database.php';
         $sql = "SELECT * FROM users";
 	    $stmt = $connection->prepare($sql);
 	    $response = $stmt->execute();

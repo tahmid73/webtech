@@ -1,27 +1,7 @@
 <?php
-// $username="";
-// session_start();
-// if (session_status() === PHP_SESSION_NONE) {
-// $username=$_SESSION['username'];
-// if($username!="")
-//     include '../components/loggedHeader.php';
-// }
-// else
-//     include '../components/header.php';
-?>
-
-<?php
 //dbms
-$servername="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbname="isp";
-$connection = new mysqli($servername, $dbUser, $dbPassword, $dbname);
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
-    ?>
+include '../model/database.php'
+?>
 
 
 
@@ -29,7 +9,7 @@ if ($connection->connect_error) {
 <html>
     <head>
         <title>Packages</title>
-        <link rel="stylesheet" href="../content/package.css">
+        <link rel="stylesheet" href="../view/css/package.css">
     </head>
     <body>
         <div class="packages">

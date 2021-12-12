@@ -1,5 +1,5 @@
 <?php 
-include '../components/loggedHeader.php';
+include './components/loggedHeader.php';
 echo "<br>";
 session_start();
 $username=$_SESSION['username'];

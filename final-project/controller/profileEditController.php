@@ -2,15 +2,7 @@
 //dbms
 session_start();
 $id=$_SESSION['id'];
-$servername="localhost";
-$dbUser="root";
-$dbPassword="";
-$dbname="isp";
-$connection = new mysqli($servername, $dbUser, $dbPassword, $dbname);
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+include '../model/database.php';
 
 
 $request_method=$_SERVER['REQUEST_METHOD'];
