@@ -18,7 +18,7 @@ $phone="Phone";
         <form name="regForm" action="../controller/registrationB.php" method="post" onsubmit="return isValidReg(this);">
     <div class="middle">
         <?php
-    include './components/middle.php';
+    include 'middle.php';
     ?>
     </div>
     <div class="regForm">

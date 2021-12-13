@@ -20,7 +20,7 @@ $usernameErr=$passErr=$flag="";
     <div class="middle">
     <form action="../controller/loginB.php" method="post" onsubmit="return isValidLog(this);">
     <?php
-    include './components/middle.php';
+    include 'middle.php';
     ?>
     </div>
     <div id="loginForm" class="loginForm">

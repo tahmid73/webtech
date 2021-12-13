@@ -13,19 +13,20 @@ include '../model/database.php';
     <meta charset="UTF-8">
     <title>Order</title>
     <link rel="stylesheet" href="./css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="middle">
-    <form action="../controller/loginB.php" method="post">
+    <form action="../controller/loginB.php" method="post" onsubmit="">
     <?php
-    include './components/middle.php';
+    include 'middle.php';
     ?>
     </div>
     <div id="loginForm" class="loginForm">
         <span class="fields">
             <h2 class="heading">Order</h2>
         </span>
-            <select class="username" placeholder="<?php echo $speed ?>" type="speed" name="speed">
+            <select class="username" placeholder="<?php echo $speed ?>" type="speed" name="speed" >
                 <?php 
                     $sql = "SELECT * FROM package";
 	                $stmt = $connection->prepare($sql);

@@ -1,9 +1,12 @@
+<?php
+    require '../model/dynamicMiddle.php';
+?>
 <html>
     <head>
         <link rel="stylesheet" href="../view/css/middle.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body>
+    <!-- <body>
         <div class="zero">
             <div>
                 <img class="images" src="../view/css/images/homepage-bg.png" alt="">
@@ -22,5 +25,6 @@
             </div>
         </div>
         </div>
-    </body>
+    </body> -->
+    <p id="i3"></p>
 </html>

@@ -18,7 +18,7 @@ $type="Type";
 <body>
         <form action="../controller/registrationBAdmin.php" method="post" onsubmit="return isValidReg(this);">
         <div class="middle">
-            <?php include './components/middle.php';?>
+            <?php include 'middle.php';?>
         </div>
     <div class="regForm">
         <span class="fields">

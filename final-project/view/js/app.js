@@ -65,3 +65,8 @@ function showUsers() {
 function getMsg(){
   myVar
 }
+
+
+function getValue(price){
+	document.getElementById(cost).innerHTML=price;
+}
